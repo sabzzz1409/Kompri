@@ -140,7 +140,7 @@
   .phone{width:min(66vw,260px);height:min(100%,540px);border-width:4px;border-radius:30px;padding-top:14px}
   body,.phone,.pad,.key,.dp{touch-action:none}
   #text,#sub,#acc{touch-action:pan-x pan-y}
-  #text{font-size:14px}
+  #text{font-size:14px;padding:16px 12px}
   #sub{font-size:17px;line-height:26px;padding:0 12px 0 40px;background-size:100% 100%,100% 26px;background-image:linear-gradient(to right,transparent 30px,var(--margin) 30px,var(--margin) 32px,transparent 32px),linear-gradient(to bottom,transparent 25px,var(--rule) 25px,var(--rule) 26px)}
   #accH{padding:8px 12px}
   .pad{gap:6px;padding:8px}
@@ -162,8 +162,14 @@
   .dpad{width:126%}
   .pad .key.kb,.pad .key.kc{margin-right:10px}
   .pad .key.kd,.pad .key.ka{margin-left:10px}
-  .dpad{padding:9%}
-  .dpad::before{inset:19%}
+  .dpad{padding:15%;width:120%}
+  .dpad::before{inset:3%;transform:none;border-radius:24%}
+  .dp-c{width:74%;height:74%;justify-self:center;align-self:center}
+  .dpad::after{content:"";position:absolute;inset:3%;border-radius:24%;pointer-events:none;
+    background:linear-gradient(45deg,transparent calc(50% - .8px),color-mix(in srgb,var(--screen-ink) 65%,transparent) calc(50% - .8px),color-mix(in srgb,var(--screen-ink) 65%,transparent) calc(50% + .8px),transparent calc(50% + .8px)),
+               linear-gradient(-45deg,transparent calc(50% - .8px),color-mix(in srgb,var(--screen-ink) 65%,transparent) calc(50% - .8px),color-mix(in srgb,var(--screen-ink) 65%,transparent) calc(50% + .8px),transparent calc(50% + .8px));
+    -webkit-mask:radial-gradient(circle closest-side at center,transparent 36%,#000 37%);mask:radial-gradient(circle closest-side at center,transparent 36%,#000 37%)}
+  .dpad{grid-template:1fr 1.3fr 1fr/1fr 1.3fr 1fr}
   .dp{transition:background .08s,box-shadow .08s,color .08s}
   .dp:active,.dp.down,.dp-c:active,.dp-c.down{color:#fff;background:rgba(255,255,255,.3);box-shadow:0 0 16px #fff,inset 0 0 10px rgba(255,255,255,.7)}
   .dp:active svg,.dp.down svg{filter:drop-shadow(0 0 4px #fff)}
